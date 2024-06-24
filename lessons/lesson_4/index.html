@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pizza course demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://cdn.video-dns.com/npm/@maveio/components/+esm"></script>
+    <style>
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+        font-weight: normal;
+      }
+      p,
+      ul,
+      div {
+        font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w-full h-screen flex flex-col items-center justify-center pt-16 pb-24">
+      <h1 class="text-[2.8rem] mb-6 leading-[3.8rem] text-center pb-12">
+        <span class="font-medium">Pizza course</span><br />
+        <span class="text-[2.1rem]">by Luca Romano</span>
+      </h1>
+      <div class="mx-auto max-w-screen-md flex items-center justify-center">
+        <div class="relative w-full aspect-video bg-white overflow-hidden rounded-3xl shadow-xl flex items-center">
+          <mave-clip
+            embed="ubg50FE0CXCOXXn"
+            class="h-96"
+            style="
+              aspect-ratio: 16 / 9;
+              background: center / contain no-repeat
+                url(https://space-ubg50.video-dns.com/FE0CXCOXXn/thumbnail.jpg);
+            "
+            theme="dolphin"
+          ></mave-clip>
+          <div
+            class="absolute top-0 left-0 w-full h-full flex items-center justify-center text-white cursor-pointer"
+            x-mave-pop="ubg50FE0CXCOXXn"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-20">
+              <path
+                fill-rule="evenodd"
+                d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="w-full flex justify-center mt-24">
+        <a
+          href="lesson.html"
+          class="mt-3 px-6 py-3 rounded-2xl bg-stone-950 text-white border-b border-transparent text-[1.2rem] pb-3.5 font-[500] flex justify-center tracking-[0.01rem]"
+        >
+          Start cooking
+        </a>
+      </div>
+    </div>
+
+    <mave-pop>
+      <mave-player theme="dolphin"></mave-player>
+    </mave-pop>
+  </body>
+</html>
