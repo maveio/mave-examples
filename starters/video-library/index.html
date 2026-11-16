@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Video library</title>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Mave components: only <mave-clip> is needed on this page (hover previews and the banner). -->
+    <script type="module" src="https://cdn.video-dns.com/npm/@maveio/components/clip/+esm"></script>
+    <script type="module" src="js/library.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="./" data-site-title>Video library</a>
+        <form class="search" role="search" id="search">
+          <label class="visually-hidden" for="q">Search videos</label>
+          <input type="search" id="q" name="q" placeholder="Search videos" autocomplete="off" />
+        </form>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <!-- Banner with the featured video. Filled in by js/library.js. -->
+      <a class="hero" id="hero" hidden></a>
+
+      <nav class="tabs" id="tabs" aria-label="Categories" hidden></nav>
+
+      <div class="toolbar">
+        <div>
+          <nav class="breadcrumb" id="breadcrumb" aria-label="Folder" hidden></nav>
+          <p class="count" id="count" aria-live="polite"></p>
+        </div>
+        <label class="sort">
+          <span>Sort by</span>
+          <select id="sort">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="title">Title</option>
+            <option value="longest">Longest</option>
+            <option value="shortest">Shortest</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="notice" id="notice" role="alert" hidden></div>
+      <div class="grid" id="grid"></div>
+      <div class="empty" id="empty" hidden></div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p><span data-site-title>Video library</span> · <span data-site-tagline></span></p>
+        <p>
+          Video by <a href="https://www.mave.io">Mave</a> ·
+          <a href="https://github.com/maveio/mave-examples">Get this starter</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
