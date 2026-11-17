@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Video library</title>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Mave components used on this page: the player and the synced transcript. -->
+    <script type="module" src="https://cdn.video-dns.com/npm/@maveio/components/player/+esm"></script>
+    <script type="module" src="https://cdn.video-dns.com/npm/@maveio/components/text/+esm"></script>
+    <script type="module" src="js/watch.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="./" data-site-title>Video library</a>
+        <form class="search" role="search" action="./" method="get">
+          <label class="visually-hidden" for="q">Search videos</label>
+          <input type="search" id="q" name="q" placeholder="Search videos" autocomplete="off" />
+        </form>
+      </div>
+    </header>
+
+    <main class="wrap watch" id="watch">
+      <article class="watch-main">
+        <div class="player-frame" id="player-frame">
+          <!-- js/watch.js sets the embed attribute. Changing it swaps the video in place. -->
+          <mave-player id="player">
+            <!-- Shown by the player when a video ends. Needs display: none to start with. -->
+            <div slot="end-screen" class="end-screen" id="end-screen" style="display: none"></div>
+          </mave-player>
+        </div>
+
+        <nav class="breadcrumb" id="breadcrumb" aria-label="Category"></nav>
+        <h1 id="title"></h1>
+        <div class="watch-meta">
+          <p id="meta"></p>
+          <button type="button" class="button quiet" id="share">Copy link</button>
+        </div>
+
+        <details class="transcript" id="transcript" hidden>
+          <summary>Transcript</summary>
+          <!-- js/watch.js adds a <mave-text> here for videos that have subtitles. -->
+        </details>
+      </article>
+
+      <aside class="watch-side" aria-labelledby="up-next-title">
+        <h2 id="up-next-title">Up next</h2>
+        <div class="up-next" id="up-next"></div>
+      </aside>
+    </main>
+
+    <div class="wrap empty" id="missing" hidden>
+      <h2>This video is not in the library</h2>
+      <p>It may have been removed, or the link is incomplete.</p>
+      <a class="button" href="./">Back to the library</a>
+    </div>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p><span data-site-title>Video library</span> · <span data-site-tagline></span></p>
+        <p>
+          Video by <a href="https://www.mave.io">Mave</a> ·
+          <a href="https://github.com/maveio/mave-examples">Get this starter</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
